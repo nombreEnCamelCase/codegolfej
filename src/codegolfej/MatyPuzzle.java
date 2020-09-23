@@ -68,6 +68,8 @@ public class MatyPuzzle {
 			return false;
 	}
 
+	// Metodo final a entregar sin el public static
+	// 256 CARACTERES (Alto numero)
 	public static boolean validPuzzle(int[][] m) {
 		int s = 0, l =m.length, c = l * l, i = 0, j = 0, k = 0, z = 0;
 		int[] v = new int[c];
