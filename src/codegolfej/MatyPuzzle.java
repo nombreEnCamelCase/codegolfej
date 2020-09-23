@@ -23,44 +23,39 @@ public class MatyPuzzle {
 //	}
 
 	public static boolean validPuzzle_2Maty(int[][] m) {
-		int countInversions = 0, size = m.length, c = (size * size), i, j, k = 0, z=0;
-		int[] vector = new int[c];
+		int countInversions = 0, ladoMatriz = m.length, totalMat = (ladoMatriz * ladoMatriz), i, j, k = 0, zeroRow=0;
+		int[] vector = new int[totalMat];
 		
-		for (i = 0; i < size; i++)
-			for (j = 0; j < size; j++) {
+		for (i = 0; i < ladoMatriz; i++)
+			for (j = 0; j < ladoMatriz; j++) {
 				if (m[i][j] == 0) 
-					z=i+1;
+					zeroRow=i+1;
 				vector[k++] = m[i][j];
 			}
 
-		for (i = 0; i < c-1; i++) {
-			for (j = i+1; j < c; j++) {
+		for (i = 0; i < totalMat-1; i++) {
+			for (j = i+1; j < totalMat; j++) {
 				if (vector[i] > vector[j] && vector[j]!=0 &&  vector[i]!=0)
 					countInversions++;
 			}
 		}
-		z++;
 		
-		System.out.println("L =" + size);
-		System.out.println("FILA= " + z);
+		System.out.println("L =" + ladoMatriz);
+		System.out.println("FILA= " + zeroRow);
 		System.out.println("NI =" + countInversions);
-//		
-//		if(size%2==0) {
-//			// Si es par
-//			if(z%2==0)
-//				return countInversions%2==0;
-//			else
-//				return countInversions%2!=0;
-//		}
-//		else
-//			if(countInversions%2==0)
-//				return true;
-//			else
-//				return false;
-//		
-		return (size%2==0)?(z%2==0)?countInversions%2==0:countInversions%2!=0:countInversions%2==0;
 	
-
+		if(ladoMatriz%2==0) {
+			// Si es par
+			if(zeroRow%2==0)
+				return countInversions%2==0;
+			else
+				return countInversions%2!=0;
+		}
+		else
+			if(countInversions%2==0)
+				return true;
+			else
+				return false;
 	}
 	
 	public static boolean validPuzzle(int[][] m) {
