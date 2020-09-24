@@ -6,7 +6,7 @@ package codegolfej;
 public class CodegolfMelisa {
 
     public static boolean isValidPuzzle(int m[][]){
-        int a = 0, c =0, d =0, j =0, i =0, x = 0,z =0, l =m.length, t = l * l;
+        int a = 0, d, j, i =0, x,z = 0, l = m.length, t = l * l;
 
         while(a <t){
             x= m[a % l][a / l];
@@ -24,7 +24,7 @@ public class CodegolfMelisa {
             a++;
         }
         
-        return l % 2 != 0 ? i % 2 == 0 : l % 2 == z % 2;
+        return l % 2 != 0 ? i % 2 == 0 : i % 2 == z % 2;
     }
     
 }
