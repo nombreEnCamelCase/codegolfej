@@ -10,9 +10,12 @@ public class Main {
 		int[][] m2_false = { { 0, 1, 2, 3 }, { 4, 5, 6, 7 }, { 8, 9, 10, 11 }, { 12, 13, 14, 15 } };
 		
 
-		System.out.println(NahuePuzzle.validPuzzle(m1_valid));
+		System.out.println(Final.validPuzzle(m));
+		System.out.println(Final.validPuzzle(m1_valid));
+		System.out.println(Final.validPuzzle(m_false));
+		System.out.println(Final.validPuzzle(m2_false));
 
-		System.out.println(MatyPuzzle.validPuzzle(m_false));
+		//System.out.println(MatyPuzzle.validPuzzle(m_false));
 
 	}
 
